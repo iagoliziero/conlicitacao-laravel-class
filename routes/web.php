@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RunProcessController;
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -16,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/lifecycle', [RunProcessController::class, 'load']);
 Route::get('/getuser', [UserController::class, 'load']);
+Route::get('/allstudents', [StudentsController::class, 'all'])->name('students.name');
+Route::get('/id/{student_id}', [StudentsController::class, 'getStudentsById']);

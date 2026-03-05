@@ -28,5 +28,10 @@ class Students extends Model
         "updated_at",
     ];
 
+    public static function getStudents($student_id) 
+    {
+        return self::where(['id' => $student_id])->first();
+    }
+
     protected $hidden = [];
 }
